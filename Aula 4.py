@@ -106,3 +106,70 @@ while (op != 's'):
         b = float(input('Digite o segundo valor'))
 
 print('Encerrando o programa...')
+
+# CALCULADORA melhorada (com break)
+print('CALCULADORA')
+print('+ Adiçao')
+print('- Subtraçao')
+print('* Multiplicaçao')
+print('/ Divisao')
+print('Pressione outra tecla para sair')
+
+op = input('Qual operaçao voce quer fazer?')
+if op == '+' or op == '-' or op == '*' or op == '/':
+    a = float(input('Digite o primeiro valor'))
+    b = float(input('Digite o segundo valor'))
+
+while True:
+    op = input('Qual operaçao voce quer fazer?')
+    if op == '+' or op == '-' or op == '*' or op == '/':
+        a = float(input('Digite o primeiro valor'))
+        b = float(input('Digite o segundo valor'))
+
+        if op == '+':
+            res = a + b
+            print('o resultado de {} + {} = {}'.format(a, b, res))
+            continue
+
+        elif op == '-':
+            res = a - b
+            print('o resultado de {} - {} = {}'.format(a, b, res))
+            continue
+
+        elif op == '*':
+            res = a * b
+            print('o resultado de {} * {} = {}'.format(a, b, res))
+            continue
+
+        elif op == '/':
+            res = a / b
+            print('o resultado de {} / {} = {}'.format(a, b, res))
+            continue
+
+        else:
+            print('Operaçao invalida')
+
+print('Encerrando o programa...')
+
+total = 0
+dinheiro = 0
+
+while True:
+  idade = input('Qual a sua idade?')
+  if idade == 'sair':
+    break
+
+  idade = int(idade)
+  total += 1
+  if idade < 3:
+    i = 0
+  elif idade > 12:
+    i = 30
+  else:
+    i = 15
+  dinheiro += i
+
+media = dinheiro/total
+print('total de pessoas: {}'.format(total))
+print('total arrecadado: {}'.format(dinheiro))
+print('media arrecadada: {}'.format(media))
