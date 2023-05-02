@@ -46,3 +46,63 @@ while True:
     if (senha == 'UnInter'):
         break
 print('Acesso concedido.')
+
+
+#Realize a sequencia de print com for e while
+#a) Inteiros de 3 até 12, com 12 incluso
+for i in range (3, 13):
+    print(i)
+
+x = 3
+while (3 <= x <= 12):
+    print(x)
+    x += 1
+#b)Inteiros de 0 até 9, excluindo 9, com passo de 2
+x = 0
+while (0 <= x < 9):
+    print(x)
+    x += 2
+
+for i in range (0, 9, 2):
+  print(i)
+
+# CALCULADORA
+print('CALCULADORA')
+print('+ Adiçao')
+print('- Subtraçao')
+print('* Multiplicaçao')
+print('/ Divisao')
+print('Pressione outra tecla para sair')
+
+op = input('Qual operaçao voce quer fazer?')
+if op == '+' or op == '-' or op == '*' or op == '/':
+    a = float(input('Digite o primeiro valor'))
+    b = float(input('Digite o segundo valor'))
+
+while (op != 's'):
+
+    if op == '+':
+        res = a + b
+        print('o resultado de {} + {} = {}'.format(a, b, res))
+
+    elif op == '-':
+        res = a - b
+        print('o resultado de {} - {} = {}'.format(a, b, res))
+
+    elif op == '*':
+        res = a * b
+        print('o resultado de {} * {} = {}'.format(a, b, res))
+
+    elif op == '/':
+        res = a / b
+        print('o resultado de {} / {} = {}'.format(a, b, res))
+
+    else:
+        print('Operaçao invalida')
+
+    op = input('Qual operaçao voce quer fazer?')
+    if op == '+' or op == '-' or op == '*' or op == '/':
+        a = float(input('Digite o primeiro valor'))
+        b = float(input('Digite o segundo valor'))
+
+print('Encerrando o programa...')
