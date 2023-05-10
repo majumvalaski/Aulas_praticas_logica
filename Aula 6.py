@@ -87,7 +87,9 @@ empate = 0
 while True:
     j1 = valida_int('Escolha sua jogada: ', 0, 3)
     if j1 == 0:
+        print('Jogo encerrado')
         break
+
     j2 = random.randint(1,3)
     jogadas.append([j1, j2])
     resultados = vencedor(j1, j2)
@@ -96,7 +98,11 @@ while True:
         for dado in jogada:
             print(dado, end= ' ')
         print()
+#Caso o jogador ja coloque "0" na primeira jogada
+if not resultados:
+    print('O jogo foi encerrado sem que nenhum resultado pudesse ser calculado.')
+else:
+    print('Numero de vitorias do jogador 1: {}'.format(resultados[0]))
+    print('Numero de vitorias do jogador 2: {}'.format(resultados[1]))
+    print('Numero de empates: {}'.format(resultados[2]))
 
-print('Numero de vitorias do jogador 1: {}'.format(resultados[0]))
-print('Numero de vitorias do jogador 2: {}'.format(resultados[1]))
-print('Numero de empates: {}'.format(resultados[2]))
