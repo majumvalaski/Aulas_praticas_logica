@@ -2,11 +2,19 @@
 import numpy as np
 cadastro = {'nome':[], 'sexo':[], 'ano':[]}
 idades = []
+homens_acima_media = []
 def mulheres_menos30(nome, sexo, idade):
     m_menos30 = []
     if sexo.upper() == 'F' and idade < 30:
         m_menos30.append(nome.upper())
     return m_menos30
+
+def homens_acima_da_media(idades, media):
+    homens = []
+    for i in range(len(idades)):
+        if cadastro['sexo'][i] == 'M' and idades[i] > media:
+            homens.append(cadastro['nome'][i])
+    return homens
 
 while True:
     terminar = input('Deseja cadastrar uma pessoa? [S/N]: ')
@@ -35,3 +43,6 @@ mulheres = []
 for i in range(len(cadastro['nome'])):
     mulheres += mulheres_menos30(cadastro['nome'][i], cadastro['sexo'][i], 2023 - cadastro['ano'][i])
 print('Mulheres abaixo de 30 anos:', mulheres)
+
+homens_acima_media = homens_acima_da_media(idades, media)
+print('Homens acima da média de idade: ', homens_acima_media)
