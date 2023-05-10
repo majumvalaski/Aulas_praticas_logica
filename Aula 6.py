@@ -42,7 +42,9 @@ def valida_int(pergunta, min, max):
         x = int(input(pergunta))
     return x
 
-def vencedor (jogador1, jogador2, v1, v2, empate):
+def vencedor (jogador1, jogador2):
+    global empate, v1, v2
+
     if jogador1 == 1: #pedra
         if jogador2 == 1: #pedra
             empate += 1
@@ -76,11 +78,11 @@ print('1 - Pedra')
 print('2 - Papel')
 print('3 - Tesoura')
 
+resultados = []
 jogadas = []
 v1 = 0
 v2 = 0
 empate = 0
-resultados = [v1, v2, empate]
 
 while True:
     j1 = valida_int('Escolha sua jogada: ', 0, 3)
@@ -88,8 +90,8 @@ while True:
         break
     j2 = random.randint(1,3)
     jogadas.append([j1, j2])
-    resultados = vencedor(j1, j2, v1, v2, empate)
-    v1, v2, empate = resultados[0], resultados[1], resultados[2]
+    resultados = vencedor(j1, j2)
+
     for jogada in jogadas:
         for dado in jogada:
             print(dado, end= ' ')
